@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+ 
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      
+        <meta property="og:title" content="Twitter俳句画像ジェネレータ" />
+        <meta property="og:type" content="wesite" />
+        <meta property="og:url" content="https://ituyama.com/JS-haiku-generator" />
+        <meta property="og:image" content="https://ituyama.com/JS-haiku-generator/img/ogp.png" />
+        <meta property="og:site_name" content="Twitter用俳句画像ジェネレータ" />
+        <meta property="og:description" content="Twitterにピッタリのサイズで俳句画像を生成。" />
+        <meta name="twitter:card" content="summary_large_image" />
+      
+   
+    <title>Twitter俳句画像ジェネレータ</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0K55WLDZ3G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0K55WLDZ3G');
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="font/ttf" href="fonts.ttf">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    body {
+       
+        background-size: cover;
+    }
+
+    .haiku {
+        margin-top: 70px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    .form-control {
+        border: none;
+        border-radius: 0px;
+        background-color: rgba(197, 216, 221, 0);
+        border-bottom: 3px, blue;
+    }
+
+    form {
+        border: none;
+
+    }
+
+    .card {
+        margin-top: 30px;
+        border-radius: 20px;
+        padding: 20px;
+        background-color: rgba(207, 229, 235, 0.4);
+        color: black;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    .btn{
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    }
+</style>
+
+
+<body onload="loadImage('preview');">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">俳句ジェネレータ</a>
+
+
+    </nav>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-lg-6">
+                <div class="card">
+                    <canvas id="preview"></canvas>
+                    
+                    <button onclick="saveCanvas('png');">pngで保存</button>
+                    
+
+
+                    <!--ダウンロード用ボタン-->
+
+                </div>
+                <p></p>
+
+
+
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="row">
+
+                </div>
+
+                <div class="row">
+
+
+                    <div class="card center">
+
+
+
+
+                        <input type="text" class="form-control-lg" id="kami" placeholder="上の句">
+                        <br>
+                        <input type="text" class="form-control-lg" id="naka" placeholder="中の句">
+                        <br>
+                        <input type="text" class="form-control-lg" id="simo" placeholder="下の句">
+                        <br>
+                        <input type="text" class="form-control-lg" id="simo1" placeholder="下の句">
+                        <br>
+                        <input type="text" class="form-control-lg" id="simo2" placeholder="下の句">
+                        <br>
+                        <input type="text" class="form-control-lg" id="name" placeholder="名前">
+                        <br>
+                        <button class="btn btn-info"
+                            onclick="drawText('preview', 'kami','naka','simo','simo1','simo2','name');">俳句を詠む</button>
+                        <button class="btn btn-info" onclick="location.reload();">消す</button>
+
+
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+</body>
+
+</html>

@@ -6,16 +6,16 @@
         <meta charset="utf-8">
         <link rel="preconnect" href="https://fonts.gstatic.com">
       
-        <meta property="og:title" content="Twitter俳句画像ジェネレータ" />
+        <meta property="og:title" content="MU掲示板ジェネレータ" />
         <meta property="og:type" content="wesite" />
-        <meta property="og:url" content="https://ituyama.com/JS-haiku-generator" />
-        <meta property="og:image" content="https://ituyama.com/JS-haiku-generator/img/ogp.png" />
-        <meta property="og:site_name" content="Twitter用俳句画像ジェネレータ" />
-        <meta property="og:description" content="Twitterにピッタリのサイズで俳句画像を生成。" />
+        <meta property="og:url" content="https://ituyama.com/MU-Generator" />
+        <meta property="og:image" content="https://ituyama.com/MU-Generator/img/ogp.png" />
+        <meta property="og:site_name" content="MU掲示板ジェネレータ" />
+        <meta property="og:description" content="TwitterにピッタリのサイズでMUにあるアレを生成。" />
         <meta name="twitter:card" content="summary_large_image" />
       
    
-    <title>Twitter俳句画像ジェネレータ</title>
+    <title>MU掲示板ジェネレータ</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K55WLDZ3G"></script>
 <script>
@@ -24,6 +24,9 @@
   gtag('js', new Date());
 
   gtag('config', 'G-0K55WLDZ3G');
+
+
+
 </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="font/ttf" href="fonts.ttf">
@@ -71,9 +74,27 @@
 </style>
 
 
-<body onload="loadImage('preview');">
+<body onload="loadImage('preview');
+    loadImage('preview')
+    var canvas = document.getElementById('preview');
+    var img = canvas.getContext('2d');   //文字のスタイルを指定
+    img.font = '22px fonts';
+    img.fillStyle = '#f5f5f5';
+    //文字の配置を指定（左上基準にしたければtop/leftだが、文字の中心座標を指定するのでcenter
+    img.textBaseline = 'center';
+    img.textAlign = 'center';
+    tategaki(img,'ホゲホゲ', 420, 320)
+    let link = document.getElementById('hiddenLink')
+    link.href = canvas.toDataURL()
+
+    document.getElementById('canvasImage').src = canvas.toDataURL()
+
+    link.click()
+
+
+">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">俳句ジェネレータ</a>
+        <a class="navbar-brand" href="#">MU掲示板ジェネレータ</a>
 
 
     </nav>
@@ -109,20 +130,20 @@
 
 
 
-                        <input type="text" class="form-control-lg" id="kami" placeholder="上の句">
+                        <input type="text" class="form-control-lg" id="kami" placeholder="１行目">
                         <br>
-                        <input type="text" class="form-control-lg" id="naka" placeholder="中の句">
+                        <input type="text" class="form-control-lg" id="naka" placeholder="２行目">
                         <br>
-                        <input type="text" class="form-control-lg" id="simo" placeholder="下の句">
+                        <input type="text" class="form-control-lg" id="simo" placeholder="４行目">
                         <br>
-                        <input type="text" class="form-control-lg" id="simo1" placeholder="下の句">
+                        <input type="text" class="form-control-lg" id="simo1" placeholder="５行目">
                         <br>
-                        <input type="text" class="form-control-lg" id="simo2" placeholder="下の句">
+                        <input type="text" class="form-control-lg" id="simo2" placeholder="６行目">
                         <br>
                         <input type="text" class="form-control-lg" id="name" placeholder="名前">
                         <br>
                         <button class="btn btn-info"
-                            onclick="drawText('preview', 'kami','naka','simo','simo1','simo2','name');">俳句を詠む</button>
+                            onclick="drawText('preview', 'kami','naka','simo','simo1','simo2','name');">格言を作る</button>
                         <button class="btn btn-info" onclick="location.reload();">消す</button>
 
 

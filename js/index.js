@@ -1,4 +1,9 @@
 //キャンバスに画像を描画する
+
+    
+
+
+
 function loadImage(id) {
     //画像を読み込んでImageオブジェクトを作成する
     var image = new Image();
@@ -44,7 +49,7 @@ function drawText(canvas_id, kami, naka, simo,simo1,simo2, name) {
 
 
     //文字のスタイルを指定
-    img.font = '22px,fonts';
+    img.font = '22px fonts';
     img.fillStyle = '#f5f5f5';
     //文字の配置を指定（左上基準にしたければtop/leftだが、文字の中心座標を指定するのでcenter
     img.textBaseline = 'center';
@@ -159,10 +164,6 @@ function saveBlob(blob, fileName) {
     // イベントの発火
     ass.dispatchEvent(event);
 }
-
-
-
-
 
 
 

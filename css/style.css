@@ -1,4 +1,20 @@
-
+@font-face {
+    font-family:"fonts";
+    
+    src:url("https://ituyama.com/JS-haiku-generator/fonts/tate.otf") format("opentype");
+    
+}
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    background: whitesmoke;
+    background-color: #dffaf6;
+    background-image:
+     repeating-linear-gradient(45deg,#fff, #fff 25px,transparent 0, transparent 50px);
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+     
+    }
 .font-loading{
     opacity: 0;
 }

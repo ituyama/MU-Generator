@@ -23,3 +23,7 @@ body{
     padding: 0 auto;
     text-align: center;
 }
+canvas{
+   width: 900px;
+   height: 600px; 
+}

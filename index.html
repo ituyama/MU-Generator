@@ -62,7 +62,7 @@
         margin-top: 30px;
         border-radius: 20px;
         padding: 20px;
-        background-color: rgba(207, 229, 235, 0.4);
+        background-color: rgba(139, 235, 171, 0.57);
         color: black;
         border: none;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -93,11 +93,14 @@
 
 
 ">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">MU掲示板ジェネレータ</a>
-
-
-    </nav>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-12 center margins">
+                <h1>MU掲示板ジェネレータ</h1>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
 
@@ -105,7 +108,7 @@
                 <div class="card">
                     <canvas id="preview"></canvas>
                     
-                    <button onclick="saveCanvas('png');">pngで保存</button>
+                    <button class="btn buttons" onclick="saveCanvas('png');">保存する</button>
                     
 
 
@@ -142,9 +145,17 @@
                         <br>
                         <input type="text" class="form-control-lg" id="name" placeholder="名前">
                         <br>
-                        <button class="btn btn-info"
-                            onclick="drawText('preview', 'kami','naka','simo','simo1','simo2','name');">格言を作る</button>
-                        <button class="btn btn-info" onclick="location.reload();">消す</button>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn buttons"
+                                onclick="drawText('preview', 'kami','naka','simo','simo1','simo2','name');">格言を作る</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn buttons" onclick="location.reload();">消す</button>
+                            </div>
+                        </div>
+                       
+              
 
 
 

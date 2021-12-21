@@ -6,12 +6,14 @@
 
 function loadImage(id) {
     //画像を読み込んでImageオブジェクトを作成する
+    
     var image = new Image();
     image.src = './img/backs.png';
     image.onload = (function () {
         //画像ロードが完了してからキャンバスの準備をする
         var haik = document.getElementById(id);
         var img = haik.getContext('2d');
+     
         //キャンバスのサイズを画像サイズに合わせる
         haik.width = image.width;
         haik.height = image.height;
@@ -28,9 +30,11 @@ function drawText(canvas_id, kami, naka, simo,simo1,simo2, name) {
     var canvas = document.getElementById(canvas_id);
 
     var img = canvas.getContext('2d');
+    var image = new Image();
+    image.src = './img/backs.png';
+    img.clearRect(0, 0, 600, 900);
 
-
-
+    img.drawImage(image, 0, 0);
 
 
     var kami = document.getElementById(kami);
